@@ -1,0 +1,381 @@
+/* Holographic Telemetry Panel */
+
+.telemetry-panel-holographic {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 380px;
+    background: linear-gradient(135deg,
+            rgba(10, 10, 30, 0.95) 0%,
+            rgba(20, 10, 40, 0.9) 50%,
+            rgba(10, 10, 30, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 0, 255, 0.3);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow:
+        0 0 60px rgba(255, 0, 255, 0.15),
+        0 0 100px rgba(0, 255, 255, 0.1),
+        inset 0 0 60px rgba(255, 0, 255, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Holographic Frame Corners */
+.holo-frame {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.holo-corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(0, 255, 255, 0.6);
+}
+
+.holo-corner.tl {
+    top: 8px;
+    left: 8px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.holo-corner.tr {
+    top: 8px;
+    right: 8px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.holo-corner.bl {
+    bottom: 8px;
+    left: 8px;
+    border-right: none;
+    border-top: none;
+}
+
+.holo-corner.br {
+    bottom: 8px;
+    right: 8px;
+    border-left: none;
+    border-top: none;
+}
+
+/* Header */
+.telemetry-header-holo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 0, 255, 0.2);
+    background: linear-gradient(90deg, rgba(255, 0, 255, 0.1) 0%, transparent 100%);
+}
+
+.header-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 2px solid #00ffff;
+    border-radius: 12px;
+    background: rgba(0, 255, 255, 0.1);
+}
+
+.header-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.header-info {
+    flex: 1;
+}
+
+.mission-type {
+    font-family: 'Orbitron', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+.satellite-name-holo {
+    margin: 4px 0 0;
+    font-family: 'Orbitron', monospace;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.close-btn-holo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 0, 255, 0.1);
+    border: 1px solid rgba(255, 0, 255, 0.3);
+    border-radius: 8px;
+    color: #ff00ff;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+/* Satellite Preview */
+.satellite-preview {
+    position: relative;
+    height: 120px;
+    margin: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.preview-label {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    font-family: 'Orbitron', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: rgba(0, 255, 255, 0.6);
+}
+
+.preview-orbit-ring {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 1px dashed rgba(0, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: rotateRing 10s linear infinite;
+}
+
+@keyframes rotateRing {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.preview-satellite {
+    position: relative;
+    width: 16px;
+    height: 12px;
+    background: #00ffff;
+    border-radius: 2px;
+    animation: floatSat 3s ease-in-out infinite;
+}
+
+@keyframes floatSat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(5deg);
+    }
+}
+
+.preview-panel {
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 6px;
+    background: linear-gradient(90deg, #0a0a2a, #1a1a4a);
+    border: 1px solid rgba(0, 255, 255, 0.5);
+    transform: translateY(-50%);
+}
+
+.preview-panel.left {
+    right: 100%;
+    margin-right: 2px;
+}
+
+.preview-panel.right {
+    left: 100%;
+    margin-left: 2px;
+}
+
+.preview-glow {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    pointer-events: none;
+}
+
+/* Telemetry Grid */
+.telemetry-grid-holo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0 20px 16px;
+}
+
+.telemetry-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px;
+    background: rgba(0, 255, 255, 0.03);
+    border: 1px solid rgba(0, 255, 255, 0.15);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.telemetry-card:hover {
+    background: rgba(0, 255, 255, 0.08);
+}
+
+.card-icon {
+    color: #00ffff;
+    opacity: 0.6;
+}
+
+.card-label {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: rgba(0, 255, 255, 0.5);
+}
+
+.card-value {
+    font-family: 'Orbitron', monospace;
+    font-size: 15px;
+    font-weight: 600;
+    color: #00ffff;
+}
+
+/* Visibility Section */
+.visibility-section-holo {
+    margin: 0 20px 20px;
+    padding: 16px;
+    background: rgba(0, 255, 0, 0.03);
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    border-radius: 10px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-family: 'Orbitron', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(0, 255, 0, 0.7);
+}
+
+.section-title svg {
+    color: #00ff00;
+}
+
+.visibility-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-family: 'Orbitron', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.visibility-indicator.visible {
+    color: #00ff00;
+}
+
+.visibility-indicator.hidden {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 10px currentColor;
+    animation: pulseDot 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
+.visibility-data {
+    display: flex;
+    gap: 16px;
+}
+
+.vis-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.vis-label {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: rgba(0, 255, 0, 0.5);
+}
+
+.vis-value {
+    font-family: 'Orbitron', monospace;
+    font-size: 14px;
+    font-weight: 600;
+    color: #00ff00;
+}
+
+/* Scanlines */
+.holo-scanlines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg,
+            transparent 0px,
+            transparent 2px,
+            rgba(0, 255, 255, 0.015) 2px,
+            rgba(0, 255, 255, 0.015) 4px);
+    pointer-events: none;
+}
+
+/* Scan Beam */
+.scan-beam {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff00ff, transparent);
+    animation: scanMove 4s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scanMove {
+    0% {
+        top: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0.3;
+    }
+}

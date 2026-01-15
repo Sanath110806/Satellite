@@ -1,0 +1,251 @@
+/* Filter Panel Styles */
+
+.filter-panel {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 320px;
+    background: rgba(10, 10, 30, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.filter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: rgba(0, 255, 255, 0.05);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.filter-header:hover {
+    background: rgba(0, 255, 255, 0.1);
+}
+
+.filter-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #00ffff;
+}
+
+.filter-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.filter-badge {
+    background: #ff00ff;
+    color: #000;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+.filter-header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(0, 255, 255, 0.7);
+}
+
+.filter-stats {
+    font-family: 'Orbitron', monospace;
+    font-size: 11px;
+}
+
+.filter-content {
+    overflow: hidden;
+}
+
+/* Search */
+.filter-search {
+    position: relative;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.filter-search input {
+    width: 100%;
+    padding: 10px 35px 10px 12px;
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 6px;
+    color: #00ffff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 13px;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.filter-search input:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.filter-search input::placeholder {
+    color: rgba(0, 255, 255, 0.4);
+}
+
+.search-clear {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(0, 255, 255, 0.5);
+    cursor: pointer;
+    padding: 4px;
+}
+
+.search-clear:hover {
+    color: #00ffff;
+}
+
+/* Quick Toggles */
+.filter-toggles {
+    display: flex;
+    gap: 8px;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 6px;
+    color: rgba(0, 255, 255, 0.7);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toggle-btn:hover {
+    background: rgba(0, 255, 255, 0.1);
+    border-color: #00ffff;
+}
+
+.toggle-btn.active {
+    background: rgba(0, 255, 255, 0.2);
+    border-color: #00ffff;
+    color: #00ffff;
+}
+
+.toggle-btn.clear {
+    border-color: rgba(255, 0, 255, 0.3);
+    color: rgba(255, 0, 255, 0.7);
+}
+
+.toggle-btn.clear:hover {
+    border-color: #ff00ff;
+    color: #ff00ff;
+}
+
+/* Filter Sections */
+.filter-section {
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    color: rgba(0, 255, 255, 0.7);
+    font-family: 'Orbitron', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.section-header:hover {
+    background: rgba(0, 255, 255, 0.05);
+    color: #00ffff;
+}
+
+.filter-section.open .section-header {
+    background: rgba(0, 255, 255, 0.08);
+    color: #00ffff;
+}
+
+.section-content {
+    padding: 0 16px 12px;
+    overflow: hidden;
+}
+
+/* Filter Chips */
+.filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: 8px;
+}
+
+.chip {
+    padding: 6px 10px;
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 4px;
+    color: rgba(0, 255, 255, 0.7);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.chip:hover {
+    background: rgba(0, 255, 255, 0.1);
+    border-color: #00ffff;
+}
+
+.chip.active {
+    background: #00ffff;
+    border-color: #00ffff;
+    color: #000;
+    font-weight: 600;
+}
+
+.orbit-chips {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+}
+
+.orbit-chip {
+    text-align: center;
+    padding: 8px 4px;
+}
+
+/* Debug Info */
+.filter-debug {
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.debug-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    font-size: 10px;
+    color: rgba(0, 255, 255, 0.5);
+}
+
+.debug-row span:last-child {
+    font-family: 'Orbitron', monospace;
+    color: #00ffff;
+}

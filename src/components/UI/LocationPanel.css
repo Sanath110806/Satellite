@@ -1,0 +1,174 @@
+.location-panel {
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 16px;
+    width: 280px;
+}
+
+.location-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.location-icon {
+    width: 16px;
+    height: 16px;
+    color: #00ffff;
+}
+
+.location-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #00ffff;
+}
+
+.location-active {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.location-name {
+    font-family: 'Orbitron', monospace;
+    font-size: 14px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.location-coords {
+    display: flex;
+    gap: 16px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 12px;
+    color: rgba(0, 255, 255, 0.7);
+}
+
+.location-clear-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    background: transparent;
+    border: 1px solid rgba(255, 0, 255, 0.4);
+    border-radius: 4px;
+    color: #ff00ff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: fit-content;
+}
+
+.location-clear-btn:hover {
+    background: rgba(255, 0, 255, 0.2);
+    border-color: #ff00ff;
+}
+
+.location-input-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.location-input {
+    flex: 1;
+    padding: 10px 12px;
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 4px;
+    color: #00ffff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.location-input::placeholder {
+    color: rgba(0, 255, 255, 0.4);
+}
+
+.location-input:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.location-search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: rgba(0, 255, 255, 0.15);
+    border: 1px solid rgba(0, 255, 255, 0.5);
+    border-radius: 4px;
+    color: #00ffff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.location-search-btn:hover:not(:disabled) {
+    background: rgba(0, 255, 255, 0.3);
+    border-color: #00ffff;
+}
+
+.location-search-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.location-gps-btn-full {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 16px;
+    background: transparent;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 4px;
+    color: rgba(0, 255, 255, 0.7);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.location-gps-btn-full:hover:not(:disabled) {
+    background: rgba(0, 255, 255, 0.1);
+    border-color: #00ffff;
+    color: #00ffff;
+}
+
+.location-gps-btn-full:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.location-error {
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(255, 50, 50, 0.1);
+    border: 1px solid rgba(255, 50, 50, 0.3);
+    border-radius: 4px;
+    color: #ff6666;
+    font-size: 12px;
+    line-height: 1.4;
+}

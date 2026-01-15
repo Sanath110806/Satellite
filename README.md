@@ -1,116 +1,47 @@
-ORBITAL COMMAND
+**Orbital Command**  
 Real-Time Space Situational Awareness Platform
 
-Orbital Command is a real-time orbital intelligence and satellite visualization platform that renders Earth and all active satellites in their true orbital positions using live public space-tracking data.
+Orbital Command is a professional real-time orbital intelligence and satellite visualization platform. It displays Earth together with all active satellites in their accurate orbital positions, utilizing live public space-tracking data.
 
-Built as a cyberpunk-style mission control console, the system provides location-aware satellite visibility, real orbital mechanics, advanced filtering, and immersive 3D visualization.
+Designed as a modern mission control interface with a cyberpunk aesthetic, the system delivers location-aware satellite visibility, precise orbital mechanics, sophisticated filtering capabilities, and immersive 3D visualization. This is not a simple satellite tracker—it is a comprehensive space operations console.
 
-This is not a tracker.
-This is a space operations interface.
+**Key Features**
 
-🚀 Features
+- Full 3D Earth visualization with realistic day/night terminator, atmospheric glow, starfield background, and orbital context  
+- Real-time rendering of thousands of satellites in their true orbital positions using SGP4 propagation and current Two-Line Element (TLE) data  
+- Location-aware visibility: input any city or use device GPS to display only satellites currently above the local horizon  
+- Satellite focus mode: lock the camera onto any satellite for detailed orbital inspection  
+- Orbital telemetry panel displaying real-time information including altitude, velocity, inclination, orbit class, operator, mission type, and time of next visible pass  
+- Advanced filtering system allowing users to filter satellites by:  
+  - Operator (e.g., SpaceX, ISRO, OneWeb, NASA)  
+  - Mission type (Communications, Navigation, Earth Observation, Weather, Military)  
+  - Orbit class (LEO, MEO, GEO)  
+  - Country of origin  
+  - Active/inactive status  
 
-🌍 Full 3D Earth Visualization
-Real-time globe with day/night terminator, atmosphere glow, starfield, and orbital context.
+- Cyberpunk-inspired mission control interface featuring neon HUD elements, holographic panels, scanline effects, glow aesthetics, and cinematic animations  
+- High-performance GPU-accelerated rendering using instanced meshes, level-of-detail (LOD) systems, spatial filtering, and WebGL optimizations  
 
-🛰 Live Satellite Orbits
-Thousands of satellites rendered in true orbital motion using SGP4 propagation and TLE data.
+**Data Sources**  
+- CelesTrak TLE catalog  
+- Space-Track public satellite database  
+- Open space telemetry datasets  
+- Orbital propagation performed using the industry-standard SGP4 model  
 
-📍 Location-Aware Visibility
-Enter any city or use GPS to see only the satellites currently above your horizon.
+**Technology Stack**  
+- Frontend: Next.js + TypeScript, Three.js / React Three Fiber, WebGL instancing, Framer Motion animations, Tailwind CSS  
+- Backend: Node.js, custom SGP4 orbit propagation engine, WebSocket-based real-time updates, TLE ingestion and caching service  
 
-🎯 Satellite Focus Mode
-Lock camera onto any satellite and inspect it in orbit.
+**Intended Users**  
+Orbital Command serves as a professional space situational awareness tool for:  
+- Aerospace engineers  
+- Satellite operators  
+- Space domain researchers  
+- Space enthusiasts  
+- Defense and security visualization professionals  
 
-🧭 Orbital Telemetry Panel
-View real-time satellite telemetry including:
+**Disclaimer**  
+Orbital Command exclusively utilizes publicly available satellite tracking data and does not provide access to classified or restricted information.
 
-Altitude
-
-Velocity
-
-Inclination
-
-Orbit class
-
-Operator
-
-Mission type
-
-Next visible pass
-
-🧪 Advanced Filtering System
-Filter satellites by:
-
-Operator (SpaceX, ISRO, OneWeb, NASA, etc.)
-
-Mission type (Comm, Nav, EO, Weather, Military)
-
-Orbit class (LEO, MEO, GEO)
-
-Country
-
-Active / Inactive status
-
-🎨 Cyberpunk Mission Control UI
-Neon HUD, holographic panels, scanlines, glow effects, and cinematic animations.
-
-⚡ GPU-Accelerated Rendering
-Instanced meshes, LOD system, spatial filtering, and WebGL optimizations for smooth performance.
-
-🛰 Data Sources
-
-CelesTrak TLE catalog
-
-Space-Track public satellite database
-
-Open space telemetry datasets
-
-Orbit propagation powered by the SGP4 model.
-
-🛠 Tech Stack
-
-Frontend
-
-Next.js + TypeScript
-
-Three.js / React Three Fiber
-
-WebGL instancing
-
-Framer Motion animations
-
-Tailwind CSS
-
-Backend
-
-Node.js
-
-SGP4 orbit engine
-
-WebSocket real-time updates
-
-TLE ingestion & caching service
-
-🎯 Purpose
-
-Orbital Command is designed as a space situational awareness console for:
-
-Aerospace engineers
-
-Satellite operators
-
-Researchers
-
-Space enthusiasts
-
-Defense & security visualization
-
-⚠ Disclaimer
-
-Orbital Command uses publicly available satellite tracking data and does not represent classified or restricted information.
-
-🧠 Why This Exists
-
-Because space is crowded.
-And situational awareness matters.
+**Purpose**  
+In an increasingly congested orbital environment, comprehensive situational awareness is essential. Orbital Command exists to provide that capability.

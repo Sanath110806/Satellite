@@ -1,73 +1,116 @@
-# React + TypeScript + Vite
+ORBITAL COMMAND
+Real-Time Space Situational Awareness Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Orbital Command is a real-time orbital intelligence and satellite visualization platform that renders Earth and all active satellites in their true orbital positions using live public space-tracking data.
 
-Currently, two official plugins are available:
+Built as a cyberpunk-style mission control console, the system provides location-aware satellite visibility, real orbital mechanics, advanced filtering, and immersive 3D visualization.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is not a tracker.
+This is a space operations interface.
 
-## React Compiler
+🚀 Features
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+🌍 Full 3D Earth Visualization
+Real-time globe with day/night terminator, atmosphere glow, starfield, and orbital context.
 
-## Expanding the ESLint configuration
+🛰 Live Satellite Orbits
+Thousands of satellites rendered in true orbital motion using SGP4 propagation and TLE data.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+📍 Location-Aware Visibility
+Enter any city or use GPS to see only the satellites currently above your horizon.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+🎯 Satellite Focus Mode
+Lock camera onto any satellite and inspect it in orbit.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+🧭 Orbital Telemetry Panel
+View real-time satellite telemetry including:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Altitude
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Velocity
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Inclination
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Orbit class
+
+Operator
+
+Mission type
+
+Next visible pass
+
+🧪 Advanced Filtering System
+Filter satellites by:
+
+Operator (SpaceX, ISRO, OneWeb, NASA, etc.)
+
+Mission type (Comm, Nav, EO, Weather, Military)
+
+Orbit class (LEO, MEO, GEO)
+
+Country
+
+Active / Inactive status
+
+🎨 Cyberpunk Mission Control UI
+Neon HUD, holographic panels, scanlines, glow effects, and cinematic animations.
+
+⚡ GPU-Accelerated Rendering
+Instanced meshes, LOD system, spatial filtering, and WebGL optimizations for smooth performance.
+
+🛰 Data Sources
+
+CelesTrak TLE catalog
+
+Space-Track public satellite database
+
+Open space telemetry datasets
+
+Orbit propagation powered by the SGP4 model.
+
+🛠 Tech Stack
+
+Frontend
+
+Next.js + TypeScript
+
+Three.js / React Three Fiber
+
+WebGL instancing
+
+Framer Motion animations
+
+Tailwind CSS
+
+Backend
+
+Node.js
+
+SGP4 orbit engine
+
+WebSocket real-time updates
+
+TLE ingestion & caching service
+
+🎯 Purpose
+
+Orbital Command is designed as a space situational awareness console for:
+
+Aerospace engineers
+
+Satellite operators
+
+Researchers
+
+Space enthusiasts
+
+Defense & security visualization
+
+⚠ Disclaimer
+
+Orbital Command uses publicly available satellite tracking data and does not represent classified or restricted information.
+
+🧠 Why This Exists
+
+Because space is crowded.
+And situational awareness matters.
